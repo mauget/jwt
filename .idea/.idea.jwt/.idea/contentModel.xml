@@ -17,7 +17,7 @@
         </e>
         <e p="JwtApi.csproj" t="IncludeRecursive" />
         <e p="Models" t="Include">
-          <e p="Model.cs" t="Include" />
+          <e p="JwtPayload.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
@@ -29,6 +29,12 @@
         <e p="Program.cs" t="Include" />
         <e p="Properties" t="Include">
           <e p="launchSettings.json" t="Include" />
+        </e>
+        <e p="Services" t="Include">
+          <e p="IJwtService.cs" t="Include" />
+          <e p="Implementations" t="Include">
+            <e p="JWTService.cs" t="Include" />
+          </e>
         </e>
         <e p="Startup.cs" t="Include" />
       </e>

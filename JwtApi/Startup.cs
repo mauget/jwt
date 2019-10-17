@@ -23,7 +23,7 @@ namespace JwtApi
         {
             services.AddCors();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-            
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new Info
@@ -50,9 +50,9 @@ namespace JwtApi
 
             app.UseHttpsRedirection();
             app.UseMvc();
-            
+
             app.UseSwagger();
-            app.UseSwaggerUI(c => { c.SwaggerEndpoint("/swagger/v1/swagger.json", "JWT Service API"); });
+            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "JWT Service API"));
         }
     }
 }

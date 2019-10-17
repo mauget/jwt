@@ -1,38 +1,44 @@
 ﻿using JwtApi.Models;
+using JwtApi.Services;
+using JwtApi.Services.Implementations;
 using Microsoft.AspNetCore.Mvc;
-using Trivial.Security;
 
 namespace JwtApi.Controllers
 {
+    /// <summary>
+    /// JSON Web Token create and decode demo.
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class JwtController : ControllerBase
     {
+        private IJwtService jwtService;
+        
+        public JwtController()
+        {
+            jwtService = new JwtService();
+        }
+        
         /// <summary>
-        /// Creates a base64-enboded JSON Web Token having a payload extracted from the passed model.'
+        /// Creates a base64-encoded JSON Web Token having a payload extracted from the passed model.'
         /// </summary>
         /// <param name="payload"></param>
         /// <returns>base64-encoded JWT string</returns>
         [HttpPost]
-        public ActionResult<string> Encode([FromBody] Model payload)
+        public ActionResult<string> Encode([FromBody] JwtPayload payload)
         {
-            var sign = HashSignatureProvider.CreateHS256("ugv9pquf5b2vey2hsa");
-            var jwt = new JsonWebToken<Model>(payload, sign);
-            var jwtStr = jwt.ToEncodedString();
-            return Ok(jwtStr);
+            return Ok(jwtService.Encode(payload));
         }
 
         /// <summary>
-        /// Decodes a model from the payload of the given base64-encoded JSON Web Tokaen
+        /// Decodes a model from the payload of the given base64-encoded JSON Web Token
         /// </summary>
-        /// <param name="jwtStr">A JWT</param>
-        /// <returns>Model</returns>
+        /// <param name="token">A base64-encoded JWT</param>
+        /// <returns>JwtPayload</returns>
         [HttpGet]
-        public ActionResult<Model> Decode(string jwtStr)
+        public ActionResult<JwtPayload> Decode(string token)
         {
-            var sign = HashSignatureProvider.CreateHS256("ugv9pquf5b2vey2hsa");
-            var jwt = JsonWebToken<Model>.Parse(jwtStr, sign);
-            return Ok(jwt);
+            return Ok(jwtService.Decode(token));
         }
     }
 }

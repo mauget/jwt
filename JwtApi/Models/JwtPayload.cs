@@ -1,6 +1,6 @@
 namespace JwtApi.Models
 {
-    public class Model
+    public class JwtPayload
     {
         public string FieldA { get; set; }
         public string FieldB { get; set; }
