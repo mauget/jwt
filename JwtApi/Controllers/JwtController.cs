@@ -1,6 +1,5 @@
 ﻿using JwtApi.Models;
 using JwtApi.Services;
-using JwtApi.Services.Implementations;
 using Microsoft.AspNetCore.Mvc;
 
 namespace JwtApi.Controllers

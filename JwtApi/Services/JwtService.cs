@@ -1,7 +1,7 @@
 using JwtApi.Models;
 using Trivial.Security;
 
-namespace JwtApi.Services.Implementations
+namespace JwtApi.Services
 {
     public class JwtService : IJwtService
     {
