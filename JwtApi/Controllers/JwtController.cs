@@ -11,11 +11,11 @@ namespace JwtApi.Controllers
     [ApiController]
     public class JwtController : ControllerBase
     {
-        private readonly IJwtService jwtService;
+        private readonly IJwtService _jwtService;
         
         public JwtController(IJwtService jwtService)
         {
-            this.jwtService = jwtService;
+            _jwtService = jwtService;
         }
         
         /// <summary>
@@ -26,7 +26,7 @@ namespace JwtApi.Controllers
         [HttpPost]
         public ActionResult<string> Encode([FromBody] JwtPayload payload)
         {
-            return Ok(jwtService.Encode(payload));
+            return Ok(_jwtService.Encode(payload));
         }
 
         /// <summary>
@@ -37,7 +37,7 @@ namespace JwtApi.Controllers
         [HttpGet]
         public ActionResult<JwtPayload> Decode(string token)
         {
-            return Ok(jwtService.Decode(token));
+            return Ok(_jwtService.Decode(token));
         }
     }
 }
