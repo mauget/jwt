@@ -7,15 +7,18 @@ namespace JwtApi.Services
     {
         public string Encode(JwtPayload payload)
         {
-            var sign = HashSignatureProvider.CreateHS256("ugv9pquf5b2vey2hsa");
-            var jwt = new JsonWebToken<JwtPayload>(payload, sign);
+            var jwt = new JsonWebToken<JwtPayload>(payload, Sign());
             return jwt.ToEncodedString();
         }
 
         public JsonWebToken<JwtPayload> Decode(string token)
         {
-            var sign = HashSignatureProvider.CreateHS256("ugv9pquf5b2vey2hsa");
-            return JsonWebToken<JwtPayload>.Parse(token, sign);
+            return JsonWebToken<JwtPayload>.Parse(token, Sign());
+        }
+
+        private HashSignatureProvider Sign()
+        {
+            return HashSignatureProvider.CreateHS256("ugv9pquf5b2vey2hsa");
         }
     }
 }

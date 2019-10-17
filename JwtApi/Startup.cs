@@ -15,7 +15,6 @@ namespace JwtApi
             Configuration = configuration;
         }
 
-        // ReSharper disable once UnusedAutoPropertyAccessor.Local
         private IConfiguration Configuration { get; }
 
         // This method is called by the runtime. Use this method to add to services container.
