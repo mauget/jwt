@@ -20,7 +20,7 @@
           <e p="JwtPayload.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
-          <e p="Debug" t="Include">
+          <e p="Release" t="Include">
             <e p="netcoreapp2.2" t="Include">
               <e p="JwtApi.AssemblyInfo.cs" t="Include" />
             </e>
