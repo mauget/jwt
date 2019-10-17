@@ -1,5 +1,4 @@
-﻿using System.IO;
-using System.Reflection;
+﻿using JwtApi.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -16,13 +15,16 @@ namespace JwtApi
             Configuration = configuration;
         }
 
-        public IConfiguration Configuration { get; }
+        // ReSharper disable once UnusedAutoPropertyAccessor.Local
+        private IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
+        // This method is called by the runtime. Use this method to add to services container.
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddCors();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            
+            services.AddSingleton<IJwtService, JwtService>();
 
             services.AddSwaggerGen(c =>
             {
@@ -30,7 +32,7 @@ namespace JwtApi
                 {
                     Version = "v1",
                     Title = "JWT API",
-                    Description = "JWT API"
+                    Description = "JSON Web Token API"
                 });
             });
         }
@@ -44,7 +46,7 @@ namespace JwtApi
             }
             else
             {
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+                // The default HSTS value is 30 days. Perhaps change this for production scenarios. see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
 

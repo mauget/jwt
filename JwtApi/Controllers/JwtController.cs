@@ -5,17 +5,17 @@ using Microsoft.AspNetCore.Mvc;
 namespace JwtApi.Controllers
 {
     /// <summary>
-    /// JSON Web Token create and decode demo.
+    /// JSON Web Token create and decode API controller.
     /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class JwtController : ControllerBase
     {
-        private IJwtService jwtService;
+        private readonly IJwtService jwtService;
         
-        public JwtController()
+        public JwtController(IJwtService jwtService)
         {
-            jwtService = new JwtService();
+            this.jwtService = jwtService;
         }
         
         /// <summary>
