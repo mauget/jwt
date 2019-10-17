@@ -1,8 +1,6 @@
-﻿﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using JwtApi.Models;
 using Microsoft.AspNetCore.Mvc;
+using Trivial.Security;
 
 namespace JwtApi.Controllers
 {
@@ -10,37 +8,31 @@ namespace JwtApi.Controllers
     [ApiController]
     public class JwtController : ControllerBase
     {
-        // GET api/jwts
-        [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
-        {
-            return new string[] { "jwt1", "jwt2" };
-        }
-
-        // GET api/jwt/5
-        [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
-        {
-            return "jwt";
-        }
-
-        // POST api/jwt
+        /// <summary>
+        /// Creates a base64-enboded JSON Web Token having a payload extracted from the passed model.'
+        /// </summary>
+        /// <param name="payload"></param>
+        /// <returns>base64-encoded JWT string</returns>
         [HttpPost]
-        public void Post([FromBody] string jwt)
+        public ActionResult<string> Encode([FromBody] Model payload)
         {
-            return;
+            var sign = HashSignatureProvider.CreateHS256("ugv9pquf5b2vey2hsa");
+            var jwt = new JsonWebToken<Model>(payload, sign);
+            var jwtStr = jwt.ToEncodedString();
+            return Ok(jwtStr);
         }
 
-        // PUT api/jwt/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string jwt)
+        /// <summary>
+        /// Decodes a model from the payload of the given base64-encoded JSON Web Tokaen
+        /// </summary>
+        /// <param name="jwtStr">A JWT</param>
+        /// <returns>Model</returns>
+        [HttpGet]
+        public ActionResult<Model> Decode(string jwtStr)
         {
-        }
-
-        // DELETE api/jwt/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
+            var sign = HashSignatureProvider.CreateHS256("ugv9pquf5b2vey2hsa");
+            var jwt = JsonWebToken<Model>.Parse(jwtStr, sign);
+            return Ok(jwt);
         }
     }
 }
