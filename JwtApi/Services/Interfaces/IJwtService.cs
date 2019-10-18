@@ -1,7 +1,7 @@
 using JwtApi.Models;
 using Trivial.Security;
 
-namespace JwtApi.Services
+namespace JwtApi.Services.Interfaces
 {
     /// <summary>
     /// A JSON Web Token API service
