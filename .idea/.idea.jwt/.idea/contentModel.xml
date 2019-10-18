@@ -30,6 +30,7 @@
         <e p="Properties" t="Include">
           <e p="launchSettings.json" t="Include" />
         </e>
+        <e p="README.md" t="Include" />
         <e p="Services" t="Include">
           <e p="Interfaces" t="Include">
             <e p="IJwtService.cs" t="Include" />
