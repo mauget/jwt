@@ -13,8 +13,8 @@ Swagger UI displays in default Web browser
 
 ![doc/Swaggerui.png](doc/Swaggerui.png)
 
-#### PUT
-Click *PUT* to expand a form to create a base64-coded JWT string from payload model
+#### POST
+Click *POST* to expand a form to create a base64-coded JWT string from payload model
 form inputs that you supply.
 
 The payload model has a series of string values that Swagger defaults to 
