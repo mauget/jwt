@@ -11,8 +11,10 @@
 
 Swagger UI displays in default Web browser
 
+![JwtApi/doc/Swaggerui.png](JwtApidoc/Swaggerui.png)
+
 #### PUT
-Click *PUT* to create a base64-coded JWT string from payload model
+Click *PUT* to expand a form to create a base64-coded JWT string from payload model
 form inputs that you supply.
 
 The payload model has a series of string values that Swagger defaults to 
@@ -39,7 +41,7 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBdWQiOiJEZXZlbG9wZXJzIiwiQ2xhaW1BIjoiVG8
 Swipe and copy it to the clipboard.
 
 #### GET
-Click *GET* to decode the payload of the JWT string parameter.
+Click *GET* to expand a form to decode the payload of the JWT string parameter.
 
 Paste the JWT into the token parameter field. Click `Execute`. The payload
 :
