@@ -11,7 +11,7 @@
 
 Swagger UI displays in default Web browser
 
-![JwtApi/doc/Swaggerui.png](JwtApidoc/Swaggerui.png)
+![JwtApi/doc/Swaggerui.png](JwtApi/doc/Swaggerui.png)
 
 #### PUT
 Click *PUT* to expand a form to create a base64-coded JWT string from payload model
