@@ -13,4 +13,8 @@
         <PackageReference Include="Trivial" Version="2.0.2" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="doc" />
+    </ItemGroup>
+
 </Project>
