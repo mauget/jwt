@@ -70,5 +70,6 @@ The following screen capture shows the base64-encoded JWT pasted
 into the Encoded panel. If you alter one of the values in the 
 Decoded panel, the string will change accordingly.
 
-![JwtApi/doc/jwt.debugger.png](JwtApi/doc/jwt.debugger.png)
+![doc/jwt.debugger.png](doc/jwt.debugger.png)
+
 
