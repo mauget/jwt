@@ -45,7 +45,12 @@ namespace JwtApi.Controllers
 
         /// <summary>
         /// Decodes a model from the payload of a signed base64-url-encoded JSON Web Token
-        /// </summary>
+        /// </summary>        /// <remarks>
+        /// Sample request:
+        /// 
+        ///     GET /api/Jwt?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBdWQiOiJEZXZlbG9wZXJzIiwiRXhwIjoxNTcxOTQyNjA0MDY2LCJJc3MiOiJsZW0iLCJTdWIiOiJKV1QgRGVtbyIsImFkbWluIjp0cnVlLCJtYW5hZ2VyIjpmYWxzZX0.TiVeUg9RVd9V7vjMd9ORdon53HsiG4GfrLk7VGYupfY
+        ///
+        /// </remarks>
         /// <param name="token">A base64-url-encoded JWT</param>
         /// <returns>JwtPayload</returns>
         [HttpGet]

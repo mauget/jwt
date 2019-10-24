@@ -9,8 +9,41 @@
       <e p=".git/info/exclude" t="IncludeRecursive" />
       <e p="jwt.sln" t="IncludeFlat" />
       <e p="JwtApi" t="IncludeRecursive">
+        <e p="appsettings.Development.json" t="Include" />
+        <e p="appsettings.json" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="controllers" t="Include">
+          <e p="JwtController.cs" t="Include" />
+        </e>
+        <e p="doc" t="Include">
+          <e p="jwt.debugger.png" t="Include" />
+          <e p="Swaggerui.png" t="Include" />
+        </e>
         <e p="JwtApi.csproj" t="IncludeRecursive" />
+        <e p="Models" t="Include">
+          <e p="JwtPayload.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Release" t="Include">
+            <e p="netcoreapp2.2" t="Include">
+              <e p="JwtApi.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="launchSettings.json" t="Include" />
+        </e>
+        <e p="README.md" t="Include" />
+        <e p="Services" t="Include">
+          <e p="Interfaces" t="Include">
+            <e p="IJwtService.cs" t="Include" />
+          </e>
+          <e p="JWTService.cs" t="Include" />
+        </e>
+        <e p="Startup.cs" t="Include" />
       </e>
+      <e p="packages" t="ExcludeRecursive" />
     </e>
   </component>
 </project>
