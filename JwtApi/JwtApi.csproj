@@ -12,7 +12,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <Folder Include="doc"/>N
+        <Folder Include="doc"/>
     </ItemGroup>
 
     <PropertyGroup>
