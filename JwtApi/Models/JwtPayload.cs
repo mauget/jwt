@@ -9,10 +9,10 @@ namespace JwtApi.Models
         public string Sub { get; set; } // Subject
         public string Iss { get; set; } // Issuer
         public string Aud { get; set; } // Audience
-        public string Exp { get; set; } // Expiration time
+        public long Exp { get; set; } // Expiration time
 
-        // Private stuff
-        public string ClaimA { get; set; }
-        public string ClaimB { get; set; }
+        // Private claims
+        public bool manager { get; set; }
+        public bool admin { get; set; }
     }
 }
