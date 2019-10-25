@@ -6,7 +6,6 @@ using JwtApi.Services.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Swashbuckle.AspNetCore.Swagger;
 
@@ -14,13 +13,6 @@ namespace JwtApi
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
-        {
-            Configuration = configuration;
-        }
-
-        private IConfiguration Configuration { get; }
-
         // This method is called by the runtime. Use this method to add to services container.
         public void ConfigureServices(IServiceCollection services)
         {
@@ -36,7 +28,7 @@ namespace JwtApi
                 {
                     Version = "v1",
                     Title = "JWT API",
-                    Description = "JSON Web Token API demonstration"
+                    Description = "JSON Web Token API demonstration",
                 });
                 
                 // Set the comments path for the Swagger JSON and UI.
@@ -63,7 +55,7 @@ namespace JwtApi
             app.UseMvc();
 
             app.UseSwagger();
-            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "JSON Web Token Service Demo"));
+            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "JSON Web Token API demonstration"));
         }
     }
 }

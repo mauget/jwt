@@ -1,6 +1,7 @@
 using System;
 using JwtApi.Models;
 using JwtApi.Services.Interfaces;
+using Microsoft.AspNetCore.Mvc;
 using Trivial.Security;
 
 namespace JwtApi.Services
