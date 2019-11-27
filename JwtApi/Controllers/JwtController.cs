@@ -21,21 +21,23 @@ namespace JwtApi.Controllers
         }
 
         /// <summary>
-        /// Creates a signed base64-url-encoded JSON Web Token having a payload model extracted from the
-        /// passed JwtPayload.
+        /// Creates a signed base64-url-encoded JSON Web Token from a payload model
         /// </summary>
         /// <remarks>
         /// Sample request:
         /// 
         ///     POST /api/Jwt
-        ///     {
-        ///        "sub": "JWT Demo",
-        ///        "iss": "lem",
-        ///        "aud": "Developers",
-        ///        "exp": "1571942604066",
-        ///        "manager": "false",
-        ///        "admin": "true"
-        ///     }
+        ///    {
+        ///        "jti": "63716c7f-aace-448e-9ff5-889e951fc190",
+        ///        "iss": "LEM",
+        ///        "sub": "Demo",
+        ///        "aud": ["Developer, Journalist, Pundit"],
+        ///        "exp": 1574821999,
+        ///        "nbf": 1574821077,
+        ///        "iat": 1574821060,
+        ///        "manager": true,
+        ///        "admin": false
+        ///    }
         ///
         /// </remarks>
         /// <param name="jwtPayload"></param>
@@ -58,12 +60,12 @@ namespace JwtApi.Controllers
         }
 
         /// <summary>
-        /// Decodes a model from the payload model of a signed base64-url-encoded JSON Web Token
+        /// Extracts a payload from a signed base64-url-encoded JSON Web Token
         /// </summary>
         /// <remarks>
         /// Sample request:
         /// 
-        ///     GET /api/Jwt?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBdWQiOiJEZXZlbG9wZXJzIiwiRXhwIjoxNTcxOTQyNjA0MDY2LCJJc3MiOiJsZW0iLCJTdWIiOiJKV1QgRGVtbyIsImFkbWluIjp0cnVlLCJtYW5hZ2VyIjpmYWxzZX0.TiVeUg9RVd9V7vjMd9ORdon53HsiG4GfrLk7VGYupfY
+        ///     GET /api/Jwt?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsiRGV2ZWxvcGVyLCBKb3VybmFsaXN0LCBQdW5kaXQiXSwiZXhwIjoxNTc0ODIxOTk5LCJpYXQiOjE1NzQ4MjEwNjAsImlzcyI6IkxFTSIsImp0aSI6IjYzNzE2YzdmLWFhY2UtNDQ4ZS05ZmY1LTg4OWU5NTFmYzE5MCIsIm5iZiI6MTU3NDgyMTA3Nywic3ViIjoiRGVtbyIsImFkbWluIjpmYWxzZSwibWFuYWdlciI6dHJ1ZX0.8-evyGqh6VHLvv4mZ6YQ15FgbxQQtZU6JWC4UqmURfY
         ///
         /// </remarks>
         /// <param name="token">A base64-url-encoded JWT</param>

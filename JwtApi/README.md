@@ -24,7 +24,7 @@ The payload model has a series of string values that Swagger defaults to
 {
   "sub": "JWT API",
   "iss": "Demo",
-  "aud": "Developers",
+  "aud": ["Developers","Testers"],
   "exp": "1571435961964",
   "claimA": "To be or not to be,",
   "claimB": "that is the question"
@@ -52,7 +52,7 @@ Paste the JWT into the token parameter field. Click `Execute`. The payload
   "payload": {
     "sub": "JWT API",
     "iss": "Demo",
-    "aud": "Developers",
+    "aud": ["Developers"],
     "exp": "1571435961964",
     "claimA": "To be or not to be,",
     "claimB": "that is the question"
