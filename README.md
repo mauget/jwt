@@ -11,7 +11,7 @@
 
 Swagger UI displays in default Web browser
 
-![JwtApi/doc/Swaggerui.png](JwtApi/doc/Swaggerui.png)
+![doc/Swaggerui.png](doc/Swaggerui.png)
 
 #### POST
 Click *POST* to expand a form to create a base64-coded JWT string from payload model
@@ -24,7 +24,7 @@ The payload model has a series of string values that Swagger defaults to
 {
   "sub": "JWT API",
   "iss": "Demo",
-  "aud": "Developers",
+  "aud": ["Developers","Testers"],
   "exp": "1571435961964",
   "claimA": "To be or not to be,",
   "claimB": "that is the question"
@@ -52,7 +52,7 @@ Paste the JWT into the token parameter field. Click `Execute`. The payload
   "payload": {
     "sub": "JWT API",
     "iss": "Demo",
-    "aud": "Developers",
+    "aud": ["Developers"],
     "exp": "1571435961964",
     "claimA": "To be or not to be,",
     "claimB": "that is the question"
@@ -70,5 +70,6 @@ The following screen capture shows the base64-encoded JWT pasted
 into the Encoded panel. If you alter one of the values in the 
 Decoded panel, the string will change accordingly.
 
-![JwtApi/doc/jwt.debugger.png](JwtApi/doc/jwt.debugger.png)
+![doc/jwt.debugger.png](doc/jwt.debugger.png)
+
 
